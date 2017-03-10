@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="idGeneralPaneAdmin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.systemofmonitoring.Main">
+   <children>
+      <MenuBar fx:id="idMenuBarAdmin" prefHeight="25.0" prefWidth="750.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Меню">
+            <items>
+                  <MenuItem mnemonicParsing="false" text="Добавить датчик" />
+              <MenuItem mnemonicParsing="false" text="Выход" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Редактировать">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Помощь">
+            <items>
+              <MenuItem mnemonicParsing="false" text="О программе" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+  <AnchorPane layoutY="24.0" minHeight="0.0" minWidth="0.0" prefHeight="446.0" prefWidth="750.0">
+         <children>
+            <ImageView fx:id="idGeneralImageAdmin" fitHeight="56.0" fitWidth="750.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/SibirTenzoPromLogo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="37.0" layoutY="82.0" text="Выбрать датчик:" />
+            <ComboBox fx:id="idComboBoxAdmin" layoutX="149.0" layoutY="78.0" prefWidth="150.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>
