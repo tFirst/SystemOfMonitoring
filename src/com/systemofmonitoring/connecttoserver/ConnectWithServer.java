@@ -12,7 +12,7 @@ public class ConnectWithServer {
     public JSONObject SendMessage(JSONObject jsonObject) throws JSONException {
         String line = null;
         int serverPort = 3333; // port
-        String address = "192.168.2.15"; // server's ip-address
+        String address = "192.168.1.6"; // server's ip-address
         try {
             InetAddress ipAddress = InetAddress.getByName(address);
             System.out.println("Any of you heard of a socket with IP address " + address + " and port " + serverPort + "?");

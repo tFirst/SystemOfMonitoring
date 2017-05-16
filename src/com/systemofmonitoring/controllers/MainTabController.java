@@ -1,6 +1,8 @@
 package com.systemofmonitoring.controllers;
 
 import com.systemofmonitoring.connecttoserver.ConnectWithServer;
+import com.systemofmonitoring.controllers.meters.Controller;
+import com.systemofmonitoring.controllers.meters.ElectricMeterController;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;

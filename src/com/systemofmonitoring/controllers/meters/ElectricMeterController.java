@@ -1,8 +1,7 @@
-package com.systemofmonitoring.controllers;
+package com.systemofmonitoring.controllers.meters;
 
 import com.systemofmonitoring.connecttoserver.ConnectWithServer;
 import com.systemofmonitoring.pojo.ElectricMeterDatasList;
-import com.systemofmonitoring.pojo.GasMeterDatasList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Parent;
@@ -17,34 +16,35 @@ import org.json.JSONObject;
 import java.io.IOException;
 
 
-public class GasMeterController extends Controller {
+public class ElectricMeterController extends Controller {
     private static Parent root;
     private JSONObject jsonObjectResult;
     private Button buttonActive;
     private DatePicker datePicker;
-    JSONArray date, time, value;
+    JSONArray date, time, active, passive;
     JSONObject jsonObjectQuery = new JSONObject();
 
-    ObservableList<GasMeterDatasList> observableList =
+    ObservableList<ElectricMeterDatasList> observableList =
             FXCollections.observableArrayList();
 
-    public GasMeterController() {
+    public ElectricMeterController() {
     }
 
-    public GasMeterController(Parent root, Button button) throws JSONException {
-        GasMeterController.root = root;
+    public ElectricMeterController(Parent root, Button button) throws JSONException {
+        ElectricMeterController.root = root;
         buttonActive = button;
-        datePicker = (DatePicker) root.lookup("#idDatePickerGas");
+        datePicker = (DatePicker) root.lookup("#idDatePickerElectric");
     }
 
     public void initData() throws JSONException, IOException {
         date = jsonObjectResult.getJSONArray("date");
         time = jsonObjectResult.getJSONArray("time");
-        value = jsonObjectResult.getJSONArray("value");
+        active = jsonObjectResult.getJSONArray("activeValue");
+        passive = jsonObjectResult.getJSONArray("passiveValue");
 
         for (int i = 0; i < time.length(); i++) {
-            observableList.add(new GasMeterDatasList
-                    (date.getString(i), time.getString(i), value.getDouble(i)));
+            observableList.add(new ElectricMeterDatasList
+                    (date.getString(i), time.getString(i), active.getDouble(i), passive.getDouble(i)));
         }
     }
 
@@ -55,23 +55,23 @@ public class GasMeterController extends Controller {
         switch (getButtonType(buttonActive)) {
             case "hour":
                 jsonObjectQuery
-                        .put("table", "GasMeter");
+                        .put("table", "ElectricMeter");
                 break;
             case "day":
                 jsonObjectQuery
-                        .put("table", "GasMeterForDay");
+                        .put("table", "ElectricMeterForDay");
                 break;
             case "week":
                 jsonObjectQuery
-                        .put("table", "GasMeterForWeek");
+                        .put("table", "ElectricMeterForWeek");
                 break;
             case "month":
                 jsonObjectQuery
-                        .put("table", "GasMeterForMonth");
+                        .put("table", "ElectricMeterForMonth");
                 break;
             case "year":
                 jsonObjectQuery
-                        .put("table", "GasMeterForYear");
+                        .put("table", "ElectricMeterForYear");
                 break;
         }
         jsonObjectQuery
@@ -97,28 +97,41 @@ public class GasMeterController extends Controller {
                 } catch (JSONException | IOException e) {
                     e.printStackTrace();
                 }
-                TableView idGasTable =
-                        (TableView) root.lookup("#idGasTable");
+                TableView idElectricTable =
+                        (TableView) root.lookup("#idElectricTable");
 
                 TableColumn
-                        idGasTableTime = new TableColumn("Time"),
-                        idGasTableValue = new TableColumn("Value");
+                        idElectricTableTime =
+                                new TableColumn("Время"),
+                        idElectricTableValueActive =
+                                new TableColumn("Активный расход"),
+                        idElectricTableValuePassive =
+                                new TableColumn("Пассивный расход");
                 if (getButtonType(buttonActive).equals("hour") ||
                         getButtonType(buttonActive).equals("day")) {
-                    idGasTableTime.setCellValueFactory
-                            (new PropertyValueFactory<GasMeterDatasList, String>("time"));
+                    idElectricTableTime.setCellValueFactory
+                            (new PropertyValueFactory<ElectricMeterDatasList,
+                                    String>("time"));
                 }
                 else {
-                    idGasTableTime.setCellValueFactory
-                            (new PropertyValueFactory<GasMeterDatasList, String>("date"));
+                    idElectricTableTime.setCellValueFactory
+                            (new PropertyValueFactory<ElectricMeterDatasList,
+                                    String>("date"));
                 }
-                idGasTableValue.setCellValueFactory
-                        (new PropertyValueFactory<ElectricMeterDatasList, Double>("value"));
+                idElectricTableValueActive.setCellValueFactory
+                        (new PropertyValueFactory<ElectricMeterDatasList,
+                                Double>("valueActive"));
+                idElectricTableValuePassive.setCellValueFactory
+                        (new PropertyValueFactory<ElectricMeterDatasList,
+                                Double>("valuePassive"));
 
-                //idGasTable.getColumns().removeAll();
-                idGasTable.getColumns().setAll(idGasTableTime, idGasTableValue);
+                idElectricTable.getColumns().removeAll();
+                idElectricTable.getColumns()
+                        .setAll(idElectricTableTime,
+                                idElectricTableValueActive,
+                                idElectricTableValuePassive);
 
-                idGasTable.setItems(observableList);
+                idElectricTable.setItems(observableList);
 
                 switch (getButtonType(buttonActive)) {
                     case "hour":
@@ -145,15 +158,15 @@ public class GasMeterController extends Controller {
 
     private String getButtonType(Button button) throws JSONException {
         switch(button.getId()) {
-            case "buttonForHourGas":
+            case "buttonForHourElectric":
                 return "hour";
-            case "buttonForDayGas":
+            case "buttonForDayElectric":
                 return "day";
-            case "buttonForWeekGas":
+            case "buttonForWeekElectric":
                 return "week";
-            case "buttonForMonthGas":
+            case "buttonForMonthElectric":
                 return "month";
-            case "buttonForYearGas":
+            case "buttonForYearElectric":
                 return "year";
             default:
                 return "";
@@ -177,7 +190,7 @@ public class GasMeterController extends Controller {
     }
 
     private void drawGraphic(String title) throws JSONException {
-        LineChart lineChart = (LineChart) root.lookup("#idChartGas");
+        LineChart lineChart = (LineChart) root.lookup("#idChartElectric");
         lineChart.setData(getChartData());
         lineChart.setTitle(title);
     }
@@ -185,13 +198,20 @@ public class GasMeterController extends Controller {
     private ObservableList<XYChart.Series<String, Double>> getChartData() throws JSONException {
         ObservableList<XYChart.Series<String, Double>> answer =
                 FXCollections.observableArrayList();
-        XYChart.Series<String, Double> valueSeries = new XYChart.Series<>();
-        valueSeries.setName("Value");
+        XYChart.Series<String, Double> activeSeries =
+                new XYChart.Series<>();
+        XYChart.Series<String, Double> passiveSeries =
+                new XYChart.Series<>();
+        activeSeries.setName("Активный расход");
+        passiveSeries.setName("Пассивный расход");
 
         for (int i = 0; i < time.length(); i++) {
-            valueSeries.getData().add(new XYChart.Data(Integer.toString(i), value.get(i)));
+            activeSeries.getData()
+                    .add(new XYChart.Data(Integer.toString(i), active.get(i)));
+            passiveSeries.getData()
+                    .add(new XYChart.Data(Integer.toString(i), passive.get(i)));
         }
-        answer.addAll(valueSeries);
+        answer.addAll(activeSeries, passiveSeries);
         return answer;
     }
 }

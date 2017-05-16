@@ -1,4 +1,4 @@
-package com.systemofmonitoring.controllers;
+package com.systemofmonitoring.controllers.meters;
 
 import javafx.scene.control.Label;
 import org.json.JSONException;
@@ -11,5 +11,8 @@ public class Controller {
     }
 
     public void setTableDatas() throws JSONException {
+    }
+
+    public void setDatasInListView() {
     }
 }

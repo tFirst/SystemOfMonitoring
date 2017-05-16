@@ -34,11 +34,16 @@
                   <Image url="@../../../images/SibirTenzoPromLogo.png" />
                </image>
             </ImageView>
-            <Label layoutX="37.0" layoutY="82.0" text="Выбрать датчик:" />
-            <ComboBox fx:id="idComboBoxTables" layoutX="149.0" layoutY="134.0" onMouseClicked="#onClickCDTable" prefWidth="150.0" promptText="Выберите таблицу" />
-            <ComboBox fx:id="idComboBoxSensors" layoutX="149.0" layoutY="78.0" prefWidth="150.0" promptText="Выберите датчик" />
-            <Label layoutX="37.0" layoutY="138.0" text="Выбрать таблицу:" />
-            <Label layoutX="37.0" layoutY="198.0" text="Выбрать колонки для отображения:" />
+            <Label layoutX="37.0" layoutY="109.0" text="Выбрать датчик:" />
+            <ComboBox fx:id="idComboBoxTables" layoutX="149.0" layoutY="161.0" prefWidth="150.0" promptText="Выберите таблицу" />
+            <ComboBox fx:id="idComboBoxSensors" layoutX="149.0" layoutY="105.0" prefWidth="150.0" promptText="Выберите датчик" />
+            <Label layoutX="37.0" layoutY="165.0" text="Выбрать таблицу:" />
+            <Label layoutX="37.0" layoutY="225.0" text="Выбрать колонки:" />
+            <ComboBox fx:id="idComboBoxColumns" layoutX="149.0" layoutY="221.0" prefWidth="150.0" promptText="Выберите колонку" />
+            <Button fx:id="idButtonAdd" layoutX="37.0" layoutY="389.0" mnemonicParsing="false" onMouseClicked="#getButtonId" text="Добавить" />
+            <Button fx:id="idButtonExitFromAdminPanel" layoutX="659.0" layoutY="389.0" mnemonicParsing="false" onMouseClicked="#getButtonId" text="Выход" />
+            <Label layoutX="461.0" layoutY="65.0" text="Добавленные колонки" />
+            <ListView fx:id="idListViewAdminPanel" layoutX="327.0" layoutY="95.0" prefHeight="278.0" prefWidth="393.0" />
          </children>
       </AnchorPane>
    </children>

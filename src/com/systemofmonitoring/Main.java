@@ -1,6 +1,6 @@
 package com.systemofmonitoring;
 
-import com.systemofmonitoring.controllers.GeneralController;
+import com.systemofmonitoring.controllers.meters.GeneralController;
 import com.systemofmonitoring.controllers.MainTabController;
 import javafx.application.Application;
 import javafx.event.Event;
@@ -15,9 +15,11 @@ import java.io.IOException;
 
 
 public class Main extends Application {
-    public static Parent root;
+    private static Parent root;
     private static Button button;
     private static Stage stage;
+
+    public Main() {}
 
     @Override
     public void start(Stage primaryStage) throws IOException, JSONException {
@@ -40,6 +42,6 @@ public class Main extends Application {
     }
 
     public void onClickReload(Event event) throws Exception {
-        new AdminPanel(stage, root);
+        new AdminPanel(new Stage());
     }
 }

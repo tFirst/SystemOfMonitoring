@@ -1,4 +1,4 @@
-package com.systemofmonitoring.controllers;
+package com.systemofmonitoring.controllers.meters;
 
 import javafx.scene.Parent;
 import javafx.scene.control.Button;

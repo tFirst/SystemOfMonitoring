@@ -1,39 +1,41 @@
 package com.systemofmonitoring;
 
-import com.systemofmonitoring.controllers.AdminPanelController;
+import com.systemofmonitoring.controllers.adminpanel.AdminPanelController;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import org.json.JSONException;
 
+import java.io.IOException;
+
 public class AdminPanel {
-    private AdminPanelController adminPanelController;
     private Scene scene;
-    Parent root;
-    public AdminPanel(Stage primaryStage, Parent rootOld) throws Exception {
-        primaryStage.close();
-        root = rootOld;
+    private static Parent root;
+    private Button button;
+    private static Stage stage;
+    private static AdminPanelController adminPanelController;
+    public AdminPanel(Stage primaryStage) throws Exception {
         root = FXMLLoader.load(getClass().getResource("forms/admin_panel.fxml"));
         primaryStage.setTitle("Панель администратора");
         scene = new Scene(root, 750, 470);
         adminPanelController =
-                new AdminPanelController(root, scene);
+                new AdminPanelController(root);
         primaryStage.setScene(scene);
         primaryStage.show();
-
-        adminPanelController.fillComboBoxSensors();
+        stage = primaryStage;
     }
 
     public AdminPanel() {
     }
 
-    public void onClickCDTable(Event event) throws JSONException {
-        //adminPanelController.fillComboBoxTables(chooseSensor);
-    }
-
-    public void onClickCCBColumns(Event event) throws JSONException {
-        //adminPanelController.fillComboBoxColumns(chooseTable);
+    public void getButtonId(Event event) throws JSONException, IOException {
+        button = (Button) event.getSource();
+        if (button.getId().contains("Add"))
+            adminPanelController.setDatasInListView();
+        else if (button.getId().contains("Exit"))
+            stage.close();
     }
 }
