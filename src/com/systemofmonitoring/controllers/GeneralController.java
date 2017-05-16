@@ -15,7 +15,10 @@ public class GeneralController {
     public void Init(Parent root, Button button) throws JSONException{
         GeneralController.root = root;
         GeneralController.buttonActive = button;
-        AddDatasInTable(new ElectricMeterController(root, buttonActive));
+        if (buttonActive.getId().contains("Electric"))
+            AddDatasInTable(new ElectricMeterController(root, buttonActive));
+        else if (buttonActive.getId().contains("Gas"))
+            AddDatasInTable(new GasMeterController(root, buttonActive));
     }
 
     private void AddDatasInTable(Controller controller) throws JSONException {

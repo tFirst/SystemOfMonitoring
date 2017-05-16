@@ -6,15 +6,14 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 
-public class ElectricMeterDatasList {
+public class GasMeterDatasList {
     private final StringProperty date, time;
-    private final DoubleProperty valueActive, valuePassive;
+    private final DoubleProperty value;
 
-    public ElectricMeterDatasList(String date, String time, double valueActive, double valuePassive) {
+    public GasMeterDatasList(String date, String time, double value) {
         this.date = new SimpleStringProperty(date);
         this.time = new SimpleStringProperty(time);
-        this.valueActive = new SimpleDoubleProperty(valueActive);
-        this.valuePassive = new SimpleDoubleProperty(valuePassive);
+        this.value = new SimpleDoubleProperty(value);
     }
 
     public StringProperty dateProp() { return date; }
@@ -30,18 +29,10 @@ public class ElectricMeterDatasList {
     }
 
     public double getValueActive() {
-        return valueActive.get();
+        return value.get();
     }
 
     public DoubleProperty activeProp() {
-        return valueActive;
-    }
-
-    public double getValuePassive() {
-        return valuePassive.get();
-    }
-
-    public DoubleProperty passiveProp() {
-        return valuePassive;
+        return value;
     }
 }

@@ -12,7 +12,7 @@
    <children>
       <TabPane fx:id="idTabPane" layoutY="19.0" prefHeight="452.0" prefWidth="750.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab fx:id="idTabMain" text="General Information">
+          <Tab fx:id="idTabMain" text="Основная информация">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -56,41 +56,71 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Label fx:id="idValueGeneralWaterConsumption" layoutX="523.0" layoutY="128.0" prefHeight="20.0" prefWidth="100.0">
+                        <Label fx:id="idValueGeneralWaterConsumption" layoutX="523.0" layoutY="128.0" prefHeight="20.0" prefWidth="100.0" text="139,11">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Label fx:id="idValueGeneralGasConsumption" layoutX="523.0" layoutY="174.0" prefHeight="20.0" prefWidth="100.0">
+                        <Label fx:id="idValueGeneralGasConsumption" layoutX="523.0" layoutY="174.0" prefHeight="20.0" prefWidth="100.0" text="645,578">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Label fx:id="idValueGeneralPressConsumption" layoutX="523.0" layoutY="221.0" prefHeight="20.0" prefWidth="100.0">
+                        <Label fx:id="idValueGeneralPressConsumption" layoutX="523.0" layoutY="221.0" prefHeight="20.0" prefWidth="100.0" text="12,3">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Label fx:id="idValueGeneralTemp1Consumption" layoutX="523.0" layoutY="268.0" prefHeight="20.0" prefWidth="100.0">
+                        <Label fx:id="idValueGeneralTemp1Consumption" layoutX="523.0" layoutY="268.0" prefHeight="20.0" prefWidth="100.0" text="+11">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Label fx:id="idValueGeneralTemp2Consumption" layoutX="523.0" layoutY="321.0" prefHeight="20.0" prefWidth="100.0">
+                        <Label fx:id="idValueGeneralTemp2Consumption" layoutX="523.0" layoutY="321.0" prefHeight="20.0" prefWidth="100.0" text="+10">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Button fx:id="idButtonGeneralReload" onMouseClicked="#onClickReload" layoutX="42.0" layoutY="377.0" mnemonicParsing="false" text="Обновить данные" />
+                        <Button fx:id="idButtonGeneralReload" layoutX="42.0" layoutY="377.0" mnemonicParsing="false" onMouseClicked="#onClickReload" text="Обновить данные" />
                         <Label layoutX="522.0" layoutY="384.0" text="Дата:" />
                         <Label fx:id="idDate" layoutX="559.0" layoutY="384.0" prefHeight="17.0" prefWidth="66.0" />
                         <Label layoutX="642.0" layoutY="384.0" text="Время:" />
                         <Label fx:id="idTime" layoutX="689.0" layoutY="384.0" prefHeight="17.0" prefWidth="50.0" />
+                        <Label layoutX="638.0" layoutY="84.0" text="квт/ч">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="639.0" layoutY="128.0" text="куб. м">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="639.0" layoutY="174.0" text="куб. м">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="642.0" layoutY="221.0" text="Атм">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="642.0" layoutY="268.0" text="°С">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="642.0" layoutY="321.0" text="°С">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab fx:id="idTabElectric" text="Meter for electric">
+          <Tab fx:id="idTabElectric" text="Счетчик электричества">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -99,7 +129,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Label fx:id="idLabelElectricalConsumption" layoutX="424.0" layoutY="23.0" prefHeight="27.0" prefWidth="152.0">
+                        <Label fx:id="idLabelElectricalConsumption" layoutX="424.0" layoutY="23.0" prefHeight="27.0" prefWidth="101.0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -108,7 +138,7 @@
                            <children>
                               <TabPane layoutX="77.0" prefHeight="331.0" prefWidth="573.0" tabClosingPolicy="UNAVAILABLE">
                                 <tabs>
-                                  <Tab text="Untitled Tab 1">
+                                  <Tab text="Таблица">
                                     <content>
                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                              <children>
@@ -116,7 +146,7 @@
                                              </children></AnchorPane>
                                     </content>
                                   </Tab>
-                                  <Tab text="Untitled Tab 2">
+                                  <Tab text="График">
                                     <content>
                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                              <children>
@@ -136,36 +166,104 @@
                               <ListView layoutX="-8.0" prefHeight="331.0" prefWidth="86.0" />
                               <Separator layoutX="74.0" layoutY="1.0" orientation="VERTICAL" prefHeight="330.0" prefWidth="6.0" />
                               <Line endY="338.0" layoutX="-7.0" layoutY="-9.0" startY="9.0" />
-                              <Button fx:id="buttonForDayElectric" layoutX="-3.0" layoutY="48.0" mnemonicParsing="false" onMouseClicked="#getButtonId" prefHeight="25.0" prefWidth="74.0" text="За день" />
-                              <Button fx:id="buttonForWeekElectric" layoutX="-3.0" layoutY="88.0" mnemonicParsing="false" onMouseClicked="#getButtonId" prefHeight="25.0" prefWidth="74.0" text="За неделю" />
-                              <Button fx:id="buttonForMonthElectric" layoutX="-3.0" layoutY="131.0" mnemonicParsing="false" onMouseClicked="#getButtonId" prefHeight="25.0" prefWidth="74.0" text="За месяц" />
-                              <Button fx:id="buttonForYearElectric" layoutX="-3.0" layoutY="175.0" mnemonicParsing="false" onMouseClicked="#getButtonId" prefHeight="25.0" prefWidth="74.0" text="За год" />
-                              <Button fx:id="buttonForHourElectric" layoutX="-3.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#getButtonId" prefHeight="25.0" prefWidth="74.0" text="За час" />
+                              <Button fx:id="buttonForDayElectric" layoutX="-3.0" layoutY="85.0" mnemonicParsing="false" onMouseClicked="#getButtonId" prefHeight="25.0" prefWidth="74.0" text="За день" />
+                              <Button fx:id="buttonForWeekElectric" layoutX="-3.0" layoutY="125.0" mnemonicParsing="false" onMouseClicked="#getButtonId" prefHeight="25.0" prefWidth="74.0" text="За неделю" />
+                              <Button fx:id="buttonForMonthElectric" layoutX="-3.0" layoutY="168.0" mnemonicParsing="false" onMouseClicked="#getButtonId" prefHeight="25.0" prefWidth="74.0" text="За месяц" />
+                              <Button fx:id="buttonForYearElectric" layoutX="-3.0" layoutY="212.0" mnemonicParsing="false" onMouseClicked="#getButtonId" prefHeight="25.0" prefWidth="74.0" text="За год" />
+                              <Button fx:id="buttonForHourElectric" layoutX="-3.0" layoutY="45.0" mnemonicParsing="false" onMouseClicked="#getButtonId" prefHeight="25.0" prefWidth="74.0" text="За час" />
+                              <DatePicker fx:id="idDatePickerElectric" layoutX="-4.0" layoutY="6.0" prefHeight="25.0" prefWidth="76.0" promptText="Дата" />
                            </children>
                         </Pane>
                         <Line endX="543.0" layoutX="154.0" layoutY="399.0" startX="-115.0" />
                         <Line endY="338.0" layoutX="697.0" layoutY="61.0" startY="9.0" />
                         <Line endX="543.0" layoutX="154.0" layoutY="69.0" startX="-115.0" />
+                        <Label layoutX="538.0" layoutY="23.0" text="квт/ч">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
-            <Tab fx:id="idTabWater" text="Meter for water">
+            <Tab fx:id="idTabGas" text="Счетчик газа">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="idLabelGasConsumption" layoutX="424.0" layoutY="23.0" prefHeight="27.0" prefWidth="152.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="124.0" layoutY="23.0" text="Общий расход газа:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Pane layoutX="46.0" layoutY="69.0" prefHeight="330.0" prefWidth="651.0">
+                           <children>
+                              <TabPane layoutX="77.0" prefHeight="331.0" prefWidth="573.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="Таблица">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="idGasTable" prefHeight="301.0" prefWidth="573.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="График">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <LineChart fx:id="idChartGas" prefHeight="304.0" prefWidth="573.0" title="График потребления электроэнергии">
+                                                   <xAxis>
+                                                      <CategoryAxis side="BOTTOM" />
+                                                   </xAxis>
+                                                   <yAxis>
+                                                      <NumberAxis side="LEFT" />
+                                                   </yAxis>
+                                                </LineChart>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                              <ListView layoutX="-8.0" prefHeight="331.0" prefWidth="86.0" />
+                              <Separator layoutX="74.0" layoutY="1.0" orientation="VERTICAL" prefHeight="330.0" prefWidth="6.0" />
+                              <Line endY="338.0" layoutX="-7.0" layoutY="-9.0" startY="9.0" />
+                              <Button fx:id="buttonForDayGas" layoutX="-3.0" layoutY="85.0" mnemonicParsing="false" onMouseClicked="#getButtonId" prefHeight="25.0" prefWidth="74.0" text="За день" />
+                              <Button fx:id="buttonForWeekGas" layoutX="-3.0" layoutY="125.0" mnemonicParsing="false" onMouseClicked="#getButtonId" prefHeight="25.0" prefWidth="74.0" text="За неделю" />
+                              <Button fx:id="buttonForMonthGas" layoutX="-3.0" layoutY="168.0" mnemonicParsing="false" onMouseClicked="#getButtonId" prefHeight="25.0" prefWidth="74.0" text="За месяц" />
+                              <Button fx:id="buttonForYearGas" layoutX="-3.0" layoutY="212.0" mnemonicParsing="false" onMouseClicked="#getButtonId" prefHeight="25.0" prefWidth="74.0" text="За год" />
+                              <Button fx:id="buttonForHourGas" layoutX="-3.0" layoutY="45.0" mnemonicParsing="false" onMouseClicked="#getButtonId" prefHeight="25.0" prefWidth="74.0" text="За час" />
+                              <DatePicker fx:id="idDatePickerGas" layoutX="-4.0" layoutY="6.0" prefHeight="25.0" prefWidth="76.0" promptText="Дата" />
+                           </children>
+                        </Pane>
+                        <Line endX="543.0" layoutX="154.0" layoutY="399.0" startX="-115.0" />
+                        <Line endY="338.0" layoutX="697.0" layoutY="61.0" startY="9.0" />
+                        <Line endX="543.0" layoutX="154.0" layoutY="69.0" startX="-115.0" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Счетчик воды">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
               </content>
             </Tab>
-            <Tab fx:id="idTabGas" text="Meter for gas">
+            <Tab text="Датчик давления">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
               </content>
             </Tab>
-            <Tab fx:id="idTabPress" text="Meter for pressure">
+            <Tab text="Датчик температуры №1">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
               </content>
             </Tab>
-            <Tab fx:id="idTabTemp" text="Meter for temperature">
+            <Tab text="Датчик температуры №2">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
               </content>
@@ -174,17 +272,19 @@
       </TabPane>
       <MenuBar fx:id="idMenuBar" prefHeight="25.0" prefWidth="750.0">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Меню">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+                  <MenuItem mnemonicParsing="false" text="Смена пользователя" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem mnemonicParsing="false" text="Выход" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="Настройки">
             <items>
               <MenuItem mnemonicParsing="false" text="Delete" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu mnemonicParsing="false" text="Помощь">
             <items>
               <MenuItem mnemonicParsing="false" text="About" />
             </items>
