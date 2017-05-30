@@ -17,7 +17,7 @@ public class AdminPanel {
     private Button button;
     private static Stage stage;
     private static AdminPanelController adminPanelController;
-    public AdminPanel(Stage primaryStage) throws Exception {
+    AdminPanel(Stage primaryStage) throws Exception {
         root = FXMLLoader.load(getClass().getResource("forms/admin_panel.fxml"));
         primaryStage.setTitle("Панель администратора");
         scene = new Scene(root, 750, 470);
