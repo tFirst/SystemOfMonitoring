@@ -17,9 +17,10 @@ public class AdminPanel {
     private Button button;
     private static Stage stage;
     private static AdminPanelController adminPanelController;
+
     AdminPanel(Stage primaryStage) throws Exception {
         root = FXMLLoader.load(getClass().getResource("forms/admin_panel.fxml"));
-        primaryStage.setTitle("Панель администратора");
+        primaryStage.setTitle("Панель настроек");
         scene = new Scene(root, 750, 470);
         adminPanelController =
                 new AdminPanelController(root);
@@ -35,6 +36,10 @@ public class AdminPanel {
         button = (Button) event.getSource();
         if (button.getId().contains("Add"))
             adminPanelController.setDatasInListView();
+        else if (button.getId().contains("Delete"))
+            adminPanelController.deleteDataFromListView();
+        else if (button.getId().contains("Ok"))
+            stage.close();
         else if (button.getId().contains("Exit"))
             stage.close();
     }

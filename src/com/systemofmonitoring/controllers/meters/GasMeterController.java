@@ -90,7 +90,7 @@ public class GasMeterController extends Controller {
     private void pushOnGetDatas() throws JSONException {
         try {
             if (getNull()) {
-                getAlert();
+                getAlert("Данных за указанный промежуток времени нет!");
             } else {
                 try {
                     initData();
@@ -120,23 +120,7 @@ public class GasMeterController extends Controller {
 
                 idGasTable.setItems(observableList);
 
-                switch (getButtonType(buttonActive)) {
-                    case "hour":
-                        drawGraphic("График расхода ресурсов за последний час");
-                        break;
-                    case "day":
-                        drawGraphic("График расхода ресурсов за последние сутки");
-                        break;
-                    case "week":
-                        drawGraphic("График расхода ресурсов за неделю");
-                        break;
-                    case "month":
-                        drawGraphic("График расхода ресурсов за месяц");
-                        break;
-                    case "year":
-                        drawGraphic("График расхода ресурсов за год");
-                        break;
-                }
+                drawGraphic(getGraphicTitle(getButtonType(buttonActive)));
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -162,14 +146,6 @@ public class GasMeterController extends Controller {
 
     public void setConsumption(Label label, String text) {
         label.setText(text);
-    }
-
-    private void getAlert() {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Ошибка");
-        alert.setHeaderText(null);
-        alert.setContentText("Данных за указанный промежуток времени нет");
-        alert.showAndWait();
     }
 
     private boolean getNull() throws JSONException {

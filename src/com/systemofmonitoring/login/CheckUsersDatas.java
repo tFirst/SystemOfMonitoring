@@ -19,4 +19,8 @@ public class CheckUsersDatas {
             return "";
         }
     }
+
+    public boolean check() {
+        return true;
+    }
 }

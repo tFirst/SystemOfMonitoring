@@ -274,19 +274,23 @@
         <menus>
           <Menu mnemonicParsing="false" text="Меню">
             <items>
-                  <MenuItem mnemonicParsing="false" text="Смена пользователя" />
+                  <MenuItem fx:id="idMenuItemChangeUser" mnemonicParsing="false" onAction="#onClickMenuItem" text="Смена пользователя" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-              <MenuItem mnemonicParsing="false" text="Выход" />
+                  <MenuItem fx:id="idMenuIntemMakeReport" mnemonicParsing="false" onAction="#onClickMenuItem" text="Создать отчет" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem fx:id="idMenuItemExit" mnemonicParsing="false" onAction="#onClickMenuItem" text="Выход" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Настройки">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+                    <MenuItem fx:id="idMenuItemAdminPanel" mnemonicParsing="false" onAction="#onClickMenuItem" text="Панель администратора" />
+                    <MenuItem fx:id="idMenuItemSettingsPanel" mnemonicParsing="false" onAction="#onClickMenuItem" text="Панель настроек" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Помощь">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+                <MenuItem fx:id="idMenuItemAdoutProgram" mnemonicParsing="false" onAction="#onClickMenuItem" text="О программе" />
+                <MenuItem fx:id="idMenuItemHowUse" mnemonicParsing="false" onAction="#onClickMenuItem" text="Как пользоваться" />
             </items>
           </Menu>
         </menus>

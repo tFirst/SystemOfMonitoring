@@ -24,4 +24,8 @@ public class GeneralController {
     private void AddDatasInTable(Controller controller) throws JSONException {
         controller.setTableDatas();
     }
+
+    private void exit() {
+
+    }
 }
