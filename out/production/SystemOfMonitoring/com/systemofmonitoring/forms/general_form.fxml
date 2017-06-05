@@ -285,6 +285,7 @@
             <items>
                     <MenuItem fx:id="idMenuItemAdminPanel" mnemonicParsing="false" onAction="#onClickMenuItem" text="Панель администратора" />
                     <MenuItem fx:id="idMenuItemSettingsPanel" mnemonicParsing="false" onAction="#onClickMenuItem" text="Панель настроек" />
+                    <MenuItem fx:id="idMenuItemDataInputPanel" mnemonicParsing="false" onAction="#onClickMenuItem" text="Внесение данных" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Помощь">

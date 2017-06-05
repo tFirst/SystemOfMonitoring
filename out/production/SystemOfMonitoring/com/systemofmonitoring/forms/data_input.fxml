@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="idGeneralPaneDataInput" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.systemofmonitoring.DataInputPanel">
+    <children>
+        <MenuBar fx:id="idMenuBarDataInput" prefHeight="25.0" prefWidth="750.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Меню">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Добавить датчик" />
+                        <MenuItem mnemonicParsing="false" text="Выход" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Редактировать">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Помощь">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="О программе" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <AnchorPane layoutY="24.0" minHeight="0.0" minWidth="0.0" prefHeight="446.0" prefWidth="750.0">
+            <children>
+                <ImageView fx:id="idGeneralImageDataInput" fitHeight="56.0" fitWidth="750.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../images/SibirTenzoPromLogo.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="37.0" layoutY="75.0" text="Выбрать датчик:" />
+                <ComboBox fx:id="idComboBoxSensorsDataInputPanel" layoutX="148.0" layoutY="71.0" prefWidth="150.0" promptText="Выберите датчик" />
+                <Button fx:id="idButtonAddDataInputPanel" layoutX="37.0" layoutY="110.0" mnemonicParsing="false" onMouseClicked="#getButtonId" text="Загрузить файл" />
+                <Button fx:id="idButtonExitFromDataInputPanel" layoutX="640.0" layoutY="402.0" mnemonicParsing="false" onMouseClicked="#getButtonId" prefHeight="25.0" prefWidth="78.0" text="Выход" />
+                <Button fx:id="idOkDataInputPanel" layoutX="37.0" layoutY="402.0" mnemonicParsing="false" onMouseClicked="#getButtonId" prefHeight="25.0" prefWidth="69.0" text="ОК" />
+            <TextField fx:id="idTextFieldDataInputPanel" layoutX="321.0" layoutY="71.0" prefHeight="25.0" prefWidth="311.0" />
+            <Button fx:id="idButtonOverview" layoutX="649.0" layoutY="71.0" mnemonicParsing="false" onMouseClicked="#getButtonId" prefHeight="25.0" prefWidth="69.0" text="Обзор" />
+            <Button fx:id="idButtonInputData" layoutX="37.0" layoutY="154.0" mnemonicParsing="false" onMouseClicked="#getButtonId" text="Внести данные" />
+            <TextArea fx:id="idTextAreaDataInputPanel" layoutX="149.0" layoutY="110.0" prefHeight="273.0" prefWidth="569.0" />
+            </children>
+        </AnchorPane>
+    </children>
+</Pane>

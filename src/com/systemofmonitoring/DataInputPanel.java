@@ -1,6 +1,7 @@
 package com.systemofmonitoring;
 
 import com.systemofmonitoring.controllers.adminpanel.AdminPanelController;
+import com.systemofmonitoring.controllers.datainputpanel.DataInputPanelController;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,33 +12,36 @@ import org.json.JSONException;
 
 import java.io.IOException;
 
-public class AdminPanel {
+
+public class DataInputPanel {
     private Scene scene;
     private static Parent root;
     private Button button;
     private static Stage stage;
-    private static AdminPanelController adminPanelController;
+    private static DataInputPanelController dataInputPanelController;
 
-    AdminPanel(Stage primaryStage) throws Exception {
-        root = FXMLLoader.load(getClass().getResource("forms/settings_panel.fxml"));
-        primaryStage.setTitle("Панель настроек");
+    DataInputPanel(Stage primaryStage) throws Exception {
+        root = FXMLLoader.load(getClass().getResource("forms/data_input.fxml"));
+        primaryStage.setTitle("Внесение данных в систему");
         scene = new Scene(root, 750, 470);
-        adminPanelController =
-                new AdminPanelController(root);
+        dataInputPanelController =
+                new DataInputPanelController(root);
         primaryStage.setScene(scene);
         primaryStage.show();
         stage = primaryStage;
     }
 
-    public AdminPanel() {
+    public DataInputPanel() {
     }
 
     public void getButtonId(Event event) throws JSONException, IOException {
         button = (Button) event.getSource();
-        if (button.getId().contains("Add"))
-            adminPanelController.setDatasInListView();
-        else if (button.getId().contains("Delete"))
-            adminPanelController.deleteDataFromListView();
+        if (button.getId().contains("Overview"))
+            dataInputPanelController.showFileDialog(stage);
+        else if (button.getId().contains("Add"))
+            dataInputPanelController.loadData();
+        else if (button.getId().contains("InputData"))
+            dataInputPanelController.sendToServer();
         else if (button.getId().contains("Ok"))
             stage.close();
         else if (button.getId().contains("Exit"))

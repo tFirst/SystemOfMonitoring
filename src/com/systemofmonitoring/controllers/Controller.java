@@ -1,9 +1,13 @@
-package com.systemofmonitoring.controllers.meters;
+package com.systemofmonitoring.controllers;
 
+import com.systemofmonitoring.connecttoserver.ConnectWithServer;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 
 public class Controller {
@@ -20,7 +24,7 @@ public class Controller {
 
     public void getAlert(String alertText) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Ошибка");
+        alert.setTitle("Информация");
         alert.setHeaderText(null);
         alert.setContentText(alertText);
         alert.showAndWait();
@@ -40,5 +44,17 @@ public class Controller {
                 return "График расхода ресурсов за год";
         }
         return "";
+    }
+
+    public void fillComboBoxSensors(ComboBox comboBox) throws JSONException {
+        JSONObject querieListSensors = new JSONObject();
+        querieListSensors
+                .put("action", "get meters");
+        JSONObject result = new ConnectWithServer().SendMessage(querieListSensors);
+
+        JSONArray jsonArray = (JSONArray) result.get("meters");
+
+        for (int i = 0; i < jsonArray.length(); i++)
+            comboBox.getItems().add(jsonArray.get(i));
     }
 }

@@ -1,6 +1,7 @@
 package com.systemofmonitoring.controllers.meters;
 
 import com.systemofmonitoring.connecttoserver.ConnectWithServer;
+import com.systemofmonitoring.controllers.Controller;
 import com.systemofmonitoring.pojo.ElectricMeterDatasList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

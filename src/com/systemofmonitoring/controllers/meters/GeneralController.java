@@ -1,5 +1,6 @@
 package com.systemofmonitoring.controllers.meters;
 
+import com.systemofmonitoring.controllers.Controller;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import org.json.JSONException;

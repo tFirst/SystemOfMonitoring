@@ -52,5 +52,7 @@ public class Main extends Application {
             stage.close();
         else if (menuItem.getId().contains("Settings"))
             new AdminPanel(new Stage());
+        else if (menuItem.getId().contains("DataInput"))
+            new DataInputPanel(new Stage());
     }
 }

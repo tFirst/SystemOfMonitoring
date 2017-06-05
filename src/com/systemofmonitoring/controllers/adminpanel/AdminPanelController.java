@@ -2,7 +2,7 @@ package com.systemofmonitoring.controllers.adminpanel;
 
 
 import com.systemofmonitoring.connecttoserver.ConnectWithServer;
-import com.systemofmonitoring.controllers.meters.Controller;
+import com.systemofmonitoring.controllers.Controller;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -25,19 +25,7 @@ public class AdminPanelController extends Controller {
         buttonAdd = (Button) root.lookup("#idButtonAdd") ;
         buttonAdd.setDisable(true);
         connectWithServer = new ConnectWithServer();
-        fillComboBoxSensors();
-    }
-
-    private void fillComboBoxSensors() throws JSONException {
-        JSONObject querieListSensors = new JSONObject();
-        querieListSensors
-                .put("action", "get meters");
-        JSONObject result = connectWithServer.SendMessage(querieListSensors);
-
-        JSONArray jsonArray = (JSONArray) result.get("meters");
-
-        for (int i = 0; i < jsonArray.length(); i++)
-            comboBoxAdminSensors.getItems().add(jsonArray.get(i));
+        fillComboBoxSensors(comboBoxAdminSensors);
 
         comboBoxAdminSensors.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             sensorName = comboBoxAdminSensors.getValue().toString();
