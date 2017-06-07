@@ -22,6 +22,23 @@ public class Controller {
     public void setDatasInListView() {
     }
 
+    public String getButtonType(Button button) throws JSONException {
+        switch(button.getId()) {
+            case "buttonForHourElectric":
+                return "hour";
+            case "buttonForDayElectric":
+                return "day";
+            case "buttonForWeekElectric":
+                return "week";
+            case "buttonForMonthElectric":
+                return "month";
+            case "buttonForYearElectric":
+                return "year";
+            default:
+                return "";
+        }
+    }
+
     public void getAlert(String alertText) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Информация");
@@ -33,9 +50,9 @@ public class Controller {
     public String getGraphicTitle(String buttonType) {
         switch (buttonType) {
             case "hour":
-                return "График расхода ресурсов за последний час";
+                return "График расхода ресурсов за час";
             case "day":
-                return "График расхода ресурсов за последние сутки";
+                return "График расхода ресурсов за сутки";
             case "week":
                 return "График расхода ресурсов за неделю";
             case "month":

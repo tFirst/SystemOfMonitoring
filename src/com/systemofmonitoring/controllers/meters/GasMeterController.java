@@ -128,23 +128,6 @@ public class GasMeterController extends Controller {
         }
     }
 
-    private String getButtonType(Button button) throws JSONException {
-        switch(button.getId()) {
-            case "buttonForHourGas":
-                return "hour";
-            case "buttonForDayGas":
-                return "day";
-            case "buttonForWeekGas":
-                return "week";
-            case "buttonForMonthGas":
-                return "month";
-            case "buttonForYearGas":
-                return "year";
-            default:
-                return "";
-        }
-    }
-
     public void setConsumption(Label label, String text) {
         label.setText(text);
     }

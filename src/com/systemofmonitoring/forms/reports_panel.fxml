@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="idGeneralPaneDataInput" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.systemofmonitoring.ReportsPanel">
+    <children>
+        <MenuBar fx:id="idMenuBarDataInput" prefHeight="25.0" prefWidth="750.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Меню">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Добавить датчик" />
+                        <MenuItem mnemonicParsing="false" text="Выход" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Редактировать">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Помощь">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="О программе" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <AnchorPane layoutY="24.0" minHeight="0.0" minWidth="0.0" prefHeight="446.0" prefWidth="750.0">
+            <children>
+                <ImageView fx:id="idGeneralImageDataInput" fitHeight="56.0" fitWidth="750.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../images/SibirTenzoPromLogo.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="idLabelInReportPanel" layoutX="33.0" layoutY="182.0" text="Выберите пункт списка:" />
+                <ComboBox fx:id="idComboBoxReportPanel" layoutX="171.0" layoutY="178.0" prefHeight="25.0" prefWidth="168.0" promptText="Выберите датчик" />
+                <Button fx:id="idButtonMakeReport" layoutX="33.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#getButtonId" text="Cоставить отчет" />
+                <Button fx:id="idButtonExitFromReportPanel" layoutX="640.0" layoutY="402.0" mnemonicParsing="false" onMouseClicked="#getButtonId" prefHeight="25.0" prefWidth="78.0" text="Выход" />
+                <Button fx:id="idOkReportPanel" layoutX="33.0" layoutY="402.0" mnemonicParsing="false" onMouseClicked="#getButtonId" prefHeight="25.0" prefWidth="69.0" text="ОК" />
+                <TextArea fx:id="idTextAreaReportPanel" layoutX="352.0" layoutY="78.0" prefHeight="282.0" prefWidth="366.0" />
+                <Button fx:id="idButtonOverviewDatas" layoutX="33.0" layoutY="261.0" mnemonicParsing="false" onMouseClicked="#getButtonId" text="Просмотр данных" />
+                <RadioButton fx:id="idRadioButtonMakeReportToResource" layoutX="33.0" layoutY="78.0" mnemonicParsing="false" text="Составить отчет по виду энергоресурса" userData="Resource" />
+                <RadioButton fx:id="idRadioButtonMakeReportToSensor" layoutX="33.0" layoutY="110.0" mnemonicParsing="false" text="Составить отчет по конкретному датчику" userData="Sensor" />
+                <Label layoutX="33.0" layoutY="220.0" text="Выберите интервал:" />
+                <ComboBox fx:id="idComboBoxIntervalReportPanel" layoutX="171.0" layoutY="216.0" prefHeight="25.0" prefWidth="111.0" promptText="Интервал" />
+            <DatePicker fx:id="idDatePickerReportPanel" layoutX="171.0" layoutY="140.0" prefHeight="25.0" prefWidth="131.0" />
+            <Label layoutX="33.0" layoutY="144.0" text="Выберите дату:" />
+            </children>
+        </AnchorPane>
+    </children>
+</Pane>

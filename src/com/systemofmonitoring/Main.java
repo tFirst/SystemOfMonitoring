@@ -1,5 +1,6 @@
 package com.systemofmonitoring;
 
+import com.systemofmonitoring.controllers.ReportsController;
 import com.systemofmonitoring.controllers.meters.GeneralController;
 import com.systemofmonitoring.controllers.MainTabController;
 import javafx.application.Application;
@@ -19,6 +20,7 @@ public class Main extends Application {
     private static Button button;
     private MenuItem menuItem;
     private static Stage stage;
+    private MainTabController mainTabController;
 
     public Main() {}
 
@@ -31,7 +33,7 @@ public class Main extends Application {
         stage = primaryStage;
         LogIn logIn = new LogIn(new Stage());
         System.out.println(root.toString());
-        new MainTabController(root);
+        mainTabController = new MainTabController(root);
     }
 
     public static void main(String[] args) {
@@ -44,12 +46,15 @@ public class Main extends Application {
     }
 
     public void onClickReload(Event event) throws Exception {
+        mainTabController = new MainTabController(root);
     }
 
     public void onClickMenuItem(ActionEvent actionEvent) throws Exception {
         menuItem = (MenuItem) actionEvent.getSource();
         if (menuItem.getId().contains("Exit"))
             stage.close();
+        else if (menuItem.getId().contains("Report"))
+            new ReportsPanel(new Stage());
         else if (menuItem.getId().contains("Settings"))
             new AdminPanel(new Stage());
         else if (menuItem.getId().contains("DataInput"))

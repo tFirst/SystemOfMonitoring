@@ -115,7 +115,7 @@ public class DataInputPanelController extends Controller {
         } catch (IOException | JSONException e) {
             getAlert(e.getMessage());
         } catch (ParseException e) {
-            e.printStackTrace();
+            getAlert(e.getMessage());
         }
     }
 
@@ -165,10 +165,7 @@ public class DataInputPanelController extends Controller {
                                     .put("active", active)
                                     .put("passive", passive)
                                     .put("value", value)));
-            if (answer.getString("answer").equals("OK"))
-                getAlert("Внесение данных в базу выполнено успешно");
-            else
-                getAlert("Внесение данных в базу не выполнено");
+            getAlert(answer.getString("answer"));
         }
     }
 }

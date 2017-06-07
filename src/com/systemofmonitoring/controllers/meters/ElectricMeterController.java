@@ -141,23 +141,6 @@ public class ElectricMeterController extends Controller {
         }
     }
 
-    private String getButtonType(Button button) throws JSONException {
-        switch(button.getId()) {
-            case "buttonForHourElectric":
-                return "hour";
-            case "buttonForDayElectric":
-                return "day";
-            case "buttonForWeekElectric":
-                return "week";
-            case "buttonForMonthElectric":
-                return "month";
-            case "buttonForYearElectric":
-                return "year";
-            default:
-                return "";
-        }
-    }
-
     public void setConsumption(Label label, String text) {
         label.setText(text);
     }
@@ -190,5 +173,21 @@ public class ElectricMeterController extends Controller {
         }
         answer.addAll(activeSeries, passiveSeries);
         return answer;
+    }
+
+    public JSONArray getDate() {
+        return date;
+    }
+
+    public JSONArray getTime() {
+        return time;
+    }
+
+    public JSONArray getActive() {
+        return active;
+    }
+
+    public JSONArray getPassive() {
+        return passive;
     }
 }
