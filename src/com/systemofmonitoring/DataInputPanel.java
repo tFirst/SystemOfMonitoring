@@ -1,6 +1,5 @@
 package com.systemofmonitoring;
 
-import com.systemofmonitoring.controllers.adminpanel.AdminPanelController;
 import com.systemofmonitoring.controllers.datainputpanel.DataInputPanelController;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;

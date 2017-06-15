@@ -1,6 +1,5 @@
 package com.systemofmonitoring;
 
-import com.systemofmonitoring.controllers.ReportsController;
 import com.systemofmonitoring.controllers.meters.GeneralController;
 import com.systemofmonitoring.controllers.MainTabController;
 import javafx.application.Application;
@@ -56,7 +55,7 @@ public class Main extends Application {
         else if (menuItem.getId().contains("Report"))
             new ReportsPanel(new Stage());
         else if (menuItem.getId().contains("Settings"))
-            new AdminPanel(new Stage());
+            new SettingsPanel(new Stage());
         else if (menuItem.getId().contains("DataInput"))
             new DataInputPanel(new Stage());
     }

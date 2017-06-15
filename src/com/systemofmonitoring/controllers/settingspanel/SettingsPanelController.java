@@ -1,4 +1,4 @@
-package com.systemofmonitoring.controllers.adminpanel;
+package com.systemofmonitoring.controllers.settingspanel;
 
 
 import com.systemofmonitoring.connecttoserver.ConnectWithServer;
@@ -7,11 +7,9 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
-import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
-public class AdminPanelController extends Controller {
+public class SettingsPanelController extends Controller {
     private ComboBox comboBoxAdminSensors;
     private ConnectWithServer connectWithServer;
     private ListView listView;
@@ -19,7 +17,7 @@ public class AdminPanelController extends Controller {
 
     private String sensorName;
 
-    public AdminPanelController(Parent root) throws JSONException {
+    public SettingsPanelController(Parent root) throws JSONException {
         listView = (ListView) root.lookup("#idListViewAdminPanel");
         comboBoxAdminSensors = (ComboBox) root.lookup("#idComboBoxSensors");
         buttonAdd = (Button) root.lookup("#idButtonAdd") ;

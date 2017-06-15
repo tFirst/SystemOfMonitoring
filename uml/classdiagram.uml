@@ -3,157 +3,212 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="228.0" y="222.67723880597015">com.systemofmonitoring.AdminPanel</node>
-    <node x="969.6299019607844" y="-48.48880597014923">com.systemofmonitoring.login.CheckUsersDatas</node>
-    <node x="280.3700980392158" y="-48.48880597014923">com.systemofmonitoring.connecttoserver.ConnectWithServer</node>
-    <node x="493.6299019607844" y="-48.48880597014923">com.systemofmonitoring.controllers.meters.Controller</node>
-    <node x="743.7549019607844" y="121.59514925373134">com.systemofmonitoring.controllers.meters.GasMeterController</node>
-    <node x="973.1299019607844" y="121.59514925373134">com.systemofmonitoring.controllers.LogInController</node>
-    <node x="588.8174019607844" y="319.5429104477612">com.systemofmonitoring.Main</node>
-    <node x="0.0" y="222.67723880597015">com.systemofmonitoring.controllers.adminpanel.GeneralControllerAdminPanel</node>
-    <node x="616.6299019607844" y="-48.48880597014923">com.systemofmonitoring.pojo.ElectricMeterDatasList</node>
-    <node x="142.41176470588243" y="121.59514925373134">com.systemofmonitoring.controllers.adminpanel.AdminPanelController</node>
-    <node x="802.6299019607844" y="-48.48880597014923">com.systemofmonitoring.pojo.GasMeterDatasList</node>
-    <node x="396.30147058823536" y="222.67723880597015">com.systemofmonitoring.controllers.MainTabController</node>
-    <node x="513.1250000000001" y="121.59514925373134">com.systemofmonitoring.controllers.meters.ElectricMeterController</node>
-    <node x="640.3750000000001" y="222.67723880597015">com.systemofmonitoring.controllers.meters.GeneralController</node>
-    <node x="999.6299019607844" y="222.67723880597015">com.systemofmonitoring.LogIn</node>
+    <node x="694.6426136363634" y="200.0">com.systemofmonitoring.controllers.datainputpanel.DataInputPanelController</node>
+    <node x="1058.1426136363634" y="110.0">com.systemofmonitoring.login.CheckUsersDatas</node>
+    <node x="527.1426136363634" y="280.0">com.systemofmonitoring.SettingsPanel</node>
+    <node x="484.4375" y="110.0">com.systemofmonitoring.controllers.Controller</node>
+    <node x="535.332765151515" y="0.0">com.systemofmonitoring.connecttoserver.ConnectWithServer</node>
+    <node x="721.1426136363634" y="280.0">com.systemofmonitoring.DataInputPanel</node>
+    <node x="327.6426136363635" y="200.0">com.systemofmonitoring.controllers.meters.GasMeterController</node>
+    <node x="500.6426136363635" y="200.0">com.systemofmonitoring.controllers.settingspanel.SettingsPanelController</node>
+    <node x="1061.6426136363634" y="200.0">com.systemofmonitoring.controllers.LogInController</node>
+    <node x="553.4348484848484" y="370.0">com.systemofmonitoring.Main</node>
+    <node x="910.6426136363634" y="280.0">com.systemofmonitoring.ReportsPanel</node>
+    <node x="88.55984848484843" y="110.0">com.systemofmonitoring.pojo.ElectricMeterDatasList</node>
+    <node x="898.6426136363634" y="200.0">com.systemofmonitoring.controllers.ReportsController</node>
+    <node x="0.0" y="280.0">com.systemofmonitoring.controllers.MainTabController</node>
+    <node x="274.55984848484843" y="110.0">com.systemofmonitoring.pojo.GasMeterDatasList</node>
+    <node x="239.270265151515" y="280.0">com.systemofmonitoring.controllers.meters.GeneralController</node>
+    <node x="85.55984848484843" y="200.0">com.systemofmonitoring.controllers.meters.ElectricMeterController</node>
+    <node x="1088.1426136363634" y="280.0">com.systemofmonitoring.LogIn</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="com.systemofmonitoring.controllers.adminpanel.GeneralControllerAdminPanel" target="com.systemofmonitoring.controllers.adminpanel.AdminPanelController">
+    <edge source="com.systemofmonitoring.Main" target="com.systemofmonitoring.DataInputPanel">
+      <point x="11.0" y="-15.0" />
+      <point x="602.9348484848484" y="330.0" />
+      <point x="786.6426136363634" y="330.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.systemofmonitoring.controllers.datainputpanel.DataInputPanelController" target="com.systemofmonitoring.connecttoserver.ConnectWithServer">
       <point x="0.0" y="-15.0" />
-      <point x="104.0" y="170.0" />
-      <point x="170.41176470588243" y="170.0" />
-      <point x="-56.0" y="15.0" />
+      <point x="786.6426136363634" y="180.0" />
+      <point x="809.9994318181816" y="180.0" />
+      <point x="809.9994318181816" y="90.0" />
+      <point x="638.9691287878786" y="90.0" />
+      <point x="27.636363636363626" y="15.0" />
     </edge>
-    <edge source="com.systemofmonitoring.controllers.adminpanel.AdminPanelController" target="com.systemofmonitoring.connecttoserver.ConnectWithServer">
-      <point x="-56.0" y="-15.0" />
-      <point x="170.41176470588243" y="70.0" />
-      <point x="293.0367647058825" y="70.0" />
-      <point x="-63.333333333333314" y="15.0" />
-    </edge>
-    <edge source="com.systemofmonitoring.Main" target="com.systemofmonitoring.AdminPanel">
-      <point x="-28.875" y="-15.0" />
-      <point x="598.4424019607844" y="283.7313432835821" />
-      <point x="285.5" y="283.7313432835821" />
+    <edge source="com.systemofmonitoring.controllers.settingspanel.SettingsPanelController" target="com.systemofmonitoring.connecttoserver.ConnectWithServer">
+      <point x="0.0" y="-15.0" />
+      <point x="587.6426136363634" y="180.0" />
+      <point x="611.332765151515" y="180.0" />
       <point x="0.0" y="15.0" />
     </edge>
-    <edge source="com.systemofmonitoring.controllers.meters.ElectricMeterController" target="com.systemofmonitoring.controllers.meters.Controller">
-      <point x="-21.5" y="-15.0" />
-      <point x="577.6250000000001" y="90.0" />
-      <point x="545.1299019607844" y="90.0" />
-      <point x="0.0" y="15.0" />
-    </edge>
-    <edge source="com.systemofmonitoring.controllers.meters.GasMeterController" target="com.systemofmonitoring.pojo.GasMeterDatasList">
-      <point x="57.375" y="-15.0" />
-      <point x="877.6299019607844" y="90.0" />
-      <point x="912.8799019607844" y="90.0" />
-      <point x="36.75" y="15.0" />
+    <edge source="com.systemofmonitoring.controllers.datainputpanel.DataInputPanelController" target="com.systemofmonitoring.controllers.Controller">
+      <point x="-61.33333333333337" y="-15.0" />
+      <point x="725.3092803030302" y="170.0" />
+      <point x="556.5375" y="170.0" />
+      <point x="20.600000000000023" y="15.0" />
     </edge>
     <edge source="com.systemofmonitoring.Main" target="com.systemofmonitoring.controllers.MainTabController">
-      <point x="-9.625" y="-15.0" />
-      <point x="617.6924019607844" y="273.7313432835821" />
-      <point x="471.30147058823536" y="273.7313432835821" />
+      <point x="-22.0" y="-15.0" />
+      <point x="569.9348484848484" y="340.0" />
+      <point x="112.5" y="340.0" />
+      <point x="37.5" y="15.0" />
+    </edge>
+    <edge source="com.systemofmonitoring.controllers.settingspanel.SettingsPanelController" target="com.systemofmonitoring.controllers.Controller">
+      <point x="-58.0" y="-15.0" />
+      <point x="529.6426136363634" y="180.0" />
+      <point x="535.9375" y="180.0" />
       <point x="0.0" y="15.0" />
     </edge>
-    <edge source="com.systemofmonitoring.controllers.meters.GasMeterController" target="com.systemofmonitoring.controllers.meters.Controller">
-      <point x="-19.125" y="-15.0" />
-      <point x="801.1299019607844" y="50.0" />
-      <point x="579.4632352941178" y="50.0" />
-      <point x="34.33333333333337" y="15.0" />
-    </edge>
-    <edge source="com.systemofmonitoring.controllers.meters.ElectricMeterController" target="com.systemofmonitoring.connecttoserver.ConnectWithServer">
-      <point x="-64.5" y="-15.0" />
-      <point x="534.6250000000001" y="70.0" />
-      <point x="394.3700980392158" y="70.0" />
-      <point x="38.0" y="15.0" />
+    <edge source="com.systemofmonitoring.DataInputPanel" target="com.systemofmonitoring.controllers.datainputpanel.DataInputPanelController">
+      <point x="32.75" y="-15.0" />
+      <point x="819.3926136363634" y="255.0" />
+      <point x="832.6426136363634" y="255.0" />
+      <point x="46.0" y="15.0" />
     </edge>
     <edge source="com.systemofmonitoring.LogIn" target="com.systemofmonitoring.controllers.LogInController">
       <point x="-20.0" y="-15.0" />
-      <point x="1019.6299019607844" y="170.0" />
-      <point x="1006.3799019607844" y="170.0" />
+      <point x="1108.1426136363634" y="255.0" />
+      <point x="1094.8926136363634" y="255.0" />
       <point x="-33.25" y="15.0" />
     </edge>
     <edge source="com.systemofmonitoring.Main" target="com.systemofmonitoring.LogIn">
-      <point x="28.875" y="-15.0" />
-      <point x="656.1924019607844" y="283.7313432835821" />
-      <point x="1039.6299019607845" y="283.7313432835821" />
+      <point x="33.0" y="-15.0" />
+      <point x="624.9348484848484" y="350.0" />
+      <point x="1128.1426136363634" y="350.0" />
       <point x="0.0" y="15.0" />
     </edge>
-    <edge source="com.systemofmonitoring.controllers.MainTabController" target="com.systemofmonitoring.controllers.meters.ElectricMeterController">
-      <point x="50.0" y="-15.0" />
-      <point x="521.3014705882354" y="170.0" />
-      <point x="556.1250000000001" y="170.0" />
-      <point x="-43.0" y="15.0" />
+    <edge source="com.systemofmonitoring.controllers.Controller" target="com.systemofmonitoring.connecttoserver.ConnectWithServer">
+      <point x="0.0" y="-15.0" />
+      <point x="535.9375" y="90.0" />
+      <point x="597.5145833333331" y="90.0" />
+      <point x="-13.81818181818187" y="15.0" />
     </edge>
-    <edge source="com.systemofmonitoring.AdminPanel" target="com.systemofmonitoring.controllers.adminpanel.AdminPanelController">
-      <point x="-28.75" y="-15.0" />
-      <point x="256.75" y="170.0" />
-      <point x="226.41176470588243" y="170.0" />
-      <point x="0.0" y="15.0" />
+    <edge source="com.systemofmonitoring.SettingsPanel" target="com.systemofmonitoring.controllers.settingspanel.SettingsPanelController">
+      <point x="-30.25" y="-15.0" />
+      <point x="557.3926136363634" y="255.0" />
+      <point x="544.1426136363634" y="255.0" />
+      <point x="-43.5" y="15.0" />
     </edge>
     <edge source="com.systemofmonitoring.controllers.meters.ElectricMeterController" target="com.systemofmonitoring.pojo.ElectricMeterDatasList">
-      <point x="64.5" y="-15.0" />
-      <point x="663.6250000000001" y="90.0" />
-      <point x="741.1299019607844" y="90.0" />
+      <point x="21.5" y="-15.0" />
+      <point x="193.05984848484843" y="180.0" />
+      <point x="213.05984848484843" y="180.0" />
       <point x="41.5" y="15.0" />
     </edge>
     <edge source="com.systemofmonitoring.controllers.meters.GeneralController" target="com.systemofmonitoring.controllers.meters.GasMeterController">
       <point x="35.75" y="-15.0" />
-      <point x="747.6250000000001" y="170.0" />
-      <point x="820.2549019607844" y="170.0" />
+      <point x="346.520265151515" y="255.0" />
+      <point x="404.1426136363635" y="255.0" />
       <point x="0.0" y="15.0" />
     </edge>
-    <edge source="com.systemofmonitoring.controllers.meters.GeneralController" target="com.systemofmonitoring.controllers.meters.ElectricMeterController">
-      <point x="-35.75" y="-15.0" />
-      <point x="676.1250000000001" y="170.0" />
-      <point x="642.1250000000001" y="170.0" />
-      <point x="43.0" y="15.0" />
-    </edge>
-    <edge source="com.systemofmonitoring.Main" target="com.systemofmonitoring.controllers.meters.GeneralController">
-      <point x="9.625" y="-15.0" />
-      <point x="636.9424019607844" y="273.7313432835821" />
-      <point x="711.8750000000001" y="273.7313432835821" />
+    <edge source="com.systemofmonitoring.Main" target="com.systemofmonitoring.ReportsPanel">
+      <point x="22.0" y="-15.0" />
+      <point x="613.9348484848484" y="340.0" />
+      <point x="970.1426136363634" y="340.0" />
       <point x="0.0" y="15.0" />
     </edge>
     <edge source="com.systemofmonitoring.controllers.LogInController" target="com.systemofmonitoring.LogIn">
       <point x="33.25" y="15.0" />
-      <point x="1072.8799019607845" y="170.0" />
-      <point x="1059.6299019607845" y="170.0" />
+      <point x="1161.3926136363634" y="255.0" />
+      <point x="1148.1426136363634" y="255.0" />
       <point x="20.0" y="-15.0" />
     </edge>
-    <edge source="com.systemofmonitoring.controllers.meters.GasMeterController" target="com.systemofmonitoring.connecttoserver.ConnectWithServer">
-      <point x="-57.375" y="-15.0" />
-      <point x="762.8799019607844" y="60.0" />
-      <point x="419.7034313725491" y="60.0" />
-      <point x="63.333333333333314" y="15.0" />
+    <edge source="com.systemofmonitoring.ReportsPanel" target="com.systemofmonitoring.controllers.ReportsController">
+      <point x="-29.75" y="-15.0" />
+      <point x="940.3926136363634" y="255.0" />
+      <point x="934.3926136363634" y="255.0" />
+      <point x="-35.75" y="15.0" />
     </edge>
-    <edge source="com.systemofmonitoring.controllers.adminpanel.AdminPanelController" target="com.systemofmonitoring.controllers.meters.Controller">
-      <point x="56.0" y="-15.0" />
-      <point x="282.41176470588243" y="90.0" />
-      <point x="510.7965686274511" y="90.0" />
-      <point x="-34.333333333333314" y="15.0" />
+    <edge source="com.systemofmonitoring.Main" target="com.systemofmonitoring.SettingsPanel">
+      <point x="0.0" y="-15.0" />
+      <point x="591.9348484848484" y="350.0" />
+      <point x="587.6426136363634" y="350.0" />
+      <point x="0.0" y="15.0" />
     </edge>
-    <edge source="com.systemofmonitoring.controllers.LogInController" target="com.systemofmonitoring.login.CheckUsersDatas">
-      <point x="-33.25" y="-15.0" />
-      <point x="1006.3799019607844" y="90.0" />
-      <point x="1004.6299019607844" y="90.0" />
-      <point x="-35.0" y="15.0" />
+    <edge source="com.systemofmonitoring.controllers.meters.GasMeterController" target="com.systemofmonitoring.controllers.Controller">
+      <point x="57.375" y="-15.0" />
+      <point x="461.5176136363635" y="180.0" />
+      <point x="515.3375" y="180.0" />
+      <point x="-20.600000000000023" y="15.0" />
     </edge>
     <edge source="com.systemofmonitoring.controllers.MainTabController" target="com.systemofmonitoring.connecttoserver.ConnectWithServer">
       <point x="0.0" y="-15.0" />
-      <point x="471.30147058823536" y="160.0" />
-      <point x="403.7377450980392" y="160.0" />
-      <point x="403.7377450980392" y="80.0" />
-      <point x="369.03676470588243" y="80.0" />
-      <point x="12.666666666666629" y="15.0" />
+      <point x="75.0" y="255.0" />
+      <point x="54.76761363636348" y="255.0" />
+      <point x="54.76761363636348" y="60.0" />
+      <point x="556.0600378787877" y="60.0" />
+      <point x="-55.27272727272725" y="15.0" />
+    </edge>
+    <edge source="com.systemofmonitoring.controllers.ReportsController" target="com.systemofmonitoring.connecttoserver.ConnectWithServer">
+      <point x="0.0" y="-15.0" />
+      <point x="970.1426136363634" y="180.0" />
+      <point x="986.6660984848484" y="180.0" />
+      <point x="986.6660984848484" y="70.0" />
+      <point x="666.6054924242422" y="70.0" />
+      <point x="55.27272727272725" y="15.0" />
+    </edge>
+    <edge source="com.systemofmonitoring.controllers.ReportsController" target="com.systemofmonitoring.controllers.Controller">
+      <point x="-47.66666666666663" y="-15.0" />
+      <point x="922.4759469696969" y="160.0" />
+      <point x="577.1375" y="160.0" />
+      <point x="41.200000000000045" y="15.0" />
+    </edge>
+    <edge source="com.systemofmonitoring.controllers.meters.GasMeterController" target="com.systemofmonitoring.pojo.GasMeterDatasList">
+      <point x="-19.125" y="-15.0" />
+      <point x="36.75" y="15.0" />
+    </edge>
+    <edge source="com.systemofmonitoring.controllers.meters.ElectricMeterController" target="com.systemofmonitoring.controllers.Controller">
+      <point x="64.5" y="-15.0" />
+      <point x="236.05984848484843" y="170.0" />
+      <point x="494.73749999999995" y="170.0" />
+      <point x="-41.19999999999999" y="15.0" />
+    </edge>
+    <edge source="com.systemofmonitoring.controllers.meters.ElectricMeterController" target="com.systemofmonitoring.connecttoserver.ConnectWithServer">
+      <point x="-64.5" y="-15.0" />
+      <point x="107.05984848484843" y="180.0" />
+      <point x="72.05984848484843" y="180.0" />
+      <point x="72.05984848484843" y="70.0" />
+      <point x="569.8782196969695" y="70.0" />
+      <point x="-41.454545454545496" y="15.0" />
+    </edge>
+    <edge source="com.systemofmonitoring.controllers.MainTabController" target="com.systemofmonitoring.controllers.meters.ElectricMeterController">
+      <point x="50.0" y="-15.0" />
+      <point x="125.0" y="255.0" />
+      <point x="128.55984848484843" y="255.0" />
+      <point x="-43.0" y="15.0" />
+    </edge>
+    <edge source="com.systemofmonitoring.controllers.meters.GeneralController" target="com.systemofmonitoring.controllers.meters.ElectricMeterController">
+      <point x="-35.75" y="-15.0" />
+      <point x="275.020265151515" y="255.0" />
+      <point x="214.55984848484843" y="255.0" />
+      <point x="43.0" y="15.0" />
+    </edge>
+    <edge source="com.systemofmonitoring.Main" target="com.systemofmonitoring.controllers.meters.GeneralController">
+      <point x="-11.0" y="-15.0" />
+      <point x="580.9348484848484" y="330.0" />
+      <point x="310.770265151515" y="330.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.systemofmonitoring.controllers.meters.GasMeterController" target="com.systemofmonitoring.connecttoserver.ConnectWithServer">
+      <point x="19.125" y="-15.0" />
+      <point x="423.2676136363635" y="160.0" />
+      <point x="432.05984848484843" y="160.0" />
+      <point x="432.05984848484843" y="80.0" />
+      <point x="583.6964015151514" y="80.0" />
+      <point x="-27.636363636363626" y="15.0" />
+    </edge>
+    <edge source="com.systemofmonitoring.controllers.LogInController" target="com.systemofmonitoring.login.CheckUsersDatas">
+      <point x="33.25" y="-15.0" />
+      <point x="1161.3926136363634" y="180.0" />
+      <point x="1163.1426136363634" y="180.0" />
+      <point x="35.0" y="15.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.9486725663716814" x="555.0" y="150.0" />
-  <SelectedNodes>
-    <node>com.systemofmonitoring.Main</node>
-  </SelectedNodes>
+  <settings layout="Hierarchic Group" zoom="0.8794093519278097" x="599.5" y="200.0" />
+  <SelectedNodes />
   <Categories />
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>

@@ -1,6 +1,6 @@
 package com.systemofmonitoring;
 
-import com.systemofmonitoring.controllers.adminpanel.AdminPanelController;
+import com.systemofmonitoring.controllers.settingspanel.SettingsPanelController;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,25 +11,25 @@ import org.json.JSONException;
 
 import java.io.IOException;
 
-public class AdminPanel {
+public class SettingsPanel {
     private Scene scene;
     private static Parent root;
     private Button button;
     private static Stage stage;
-    private static AdminPanelController adminPanelController;
+    private static SettingsPanelController adminPanelController;
 
-    AdminPanel(Stage primaryStage) throws Exception {
+    SettingsPanel(Stage primaryStage) throws Exception {
         root = FXMLLoader.load(getClass().getResource("forms/settings_panel.fxml"));
         primaryStage.setTitle("Панель настроек");
         scene = new Scene(root, 750, 470);
         adminPanelController =
-                new AdminPanelController(root);
+                new SettingsPanelController(root);
         primaryStage.setScene(scene);
         primaryStage.show();
         stage = primaryStage;
     }
 
-    public AdminPanel() {
+    public SettingsPanel() {
     }
 
     public void getButtonId(Event event) throws JSONException, IOException {
